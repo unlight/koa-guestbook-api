@@ -8,10 +8,16 @@ export function getConnection(options?): Promise<Connection> {
             type: process.env.TYPEORM_DRIVER_TYPE,
             storage: process.env.TYPEORM_STORAGE
         },
+        entities: [
+            `${__dirname}/entities/*.ts`
+        ],
         autoSchemaSync: false,
         logging: {
             logQueries: options && options.logQueries
-        }
+        },
+        cli: {
+            migrationsDir: `${__dirname}/migrations`
+        },
     } as ConnectionOptions);
 }
 

@@ -14,7 +14,12 @@
     "test:w": "npm run mocha -- --watch --watch-extensions ts **/*.spec.ts",
     "tscheck": "echo tscheck... && tsc --noEmit",
     "tscheck:w": "npm run tscheck -- --watch",
+    "migrations:create": "typeorm migrations:create --dir app/migrations -n",
+    "migrations:run": "typeorm migrations:run",
+    "migrations:revert": "typeorm migrations:revert",
+    "script": "ts-node -F app/run-script",
     "eslint": "eslint --ext ts app",
+    "typeorm": "typeorm",
     "mocha": "ts-node -F node_modules/mocha/bin/_mocha",
     "up": "updtr --test-stdout --save-exact -R simple --test \"npm run test\""
   },

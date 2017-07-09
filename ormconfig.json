@@ -1,0 +1,16 @@
+[
+    {
+        "name": "default",
+        "driver": {
+            "type": "sqlite",
+            "storage": "~db.sqlite"
+        },
+        "autoSchemaSync": false,
+        "logging": {
+            "logQueries": true
+        },
+        "cli": {
+            "migrationsDir": "app/migrations"
+        }
+    }
+]
