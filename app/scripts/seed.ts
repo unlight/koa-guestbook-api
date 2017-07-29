@@ -9,7 +9,7 @@ export async function run(connection: Connection): Promise<any> {
         (c = new Category(), c.name = 'Anatreptic', c),
         (c = new Category(), c.name = 'Bedangled', c),
     ];
-    await Promise.all(categories.map(c => connection.entityManager.persist(c)))
+    await Promise.all(categories.map(c => connection.entityManager.persist(c)));
     let m: Message;
     const messages = [
         (m = new Message(), m.author = 'Reatha', m.dateInserted = '2012-08-19', m.body = 'sympathism laterodorsal superoccipital barkevikitic engrandizement rhopalic phryganeoid elegize upcurve Lapeirousia polyporoid chrysogen pantomorph reprover antrotympanic pleonic supracargo skeily blazonment boar precongenial incompassionateness format fluer', m),
@@ -24,5 +24,5 @@ export async function run(connection: Connection): Promise<any> {
     ];
     messages[0].category = categories[0];
     messages[1].category = categories[1];
-    await Promise.all(messages.map(_ => connection.entityManager.persist(_)))
+    await Promise.all(messages.map(_ => connection.entityManager.persist(_)));
 }

@@ -11,7 +11,7 @@ export async function browse(k: Router.IRouterContext, next) {
 
 export function categoryRoutes() {
     return new Router()
-    .prefix('/category')
-    .get('/browse', browse)
-    .routes();
+        .prefix('/category')
+        .get('/browse', browse)
+        .routes();
 }
