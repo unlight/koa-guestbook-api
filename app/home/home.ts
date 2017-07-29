@@ -3,8 +3,8 @@ import { resolve } from 'path';
 import { inject } from '@epam/inject';
 
 export async function home(k: Router.IRouterContext, next: any) {
-    const jsonfile = inject('jsonfile', () => require('jsonfile'));
-    const pkg = jsonfile.readFileSync(resolve('package.json'));
+    const readJson = inject('readJson', () => require('jsonfile').readFileSync);
+    const pkg = readJson(resolve('package.json'));
     k.body = {
         name: pkg.name,
         version: pkg.version,

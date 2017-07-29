@@ -1,17 +1,21 @@
 import { app } from '../server';
 import { Server } from 'http';
+import { home } from './home';
+import { inject, injector } from '@epam/inject';
+import assert = require('assert');
 
 import supertest = require('supertest');
 
-describe('home endpoint', () => {
+describe('home:', () => {
 
     let server: Server;
 
-    beforeEach(() => {
+    before(() => {
         server = app.listen();
     });
 
-    afterEach(() => {
+    after(() => {
+        injector.clear();
         server.close();
     });
 
@@ -25,4 +29,14 @@ describe('home endpoint', () => {
             });
     });
 
+    it('middleware', async () => {
+        inject('readJson', () => (file) => ({
+            name: 'name',
+            version: 'version',
+            description: 'description',
+        }));
+        const k = {} as any;
+        home(k, () => { });
+        assert.notDeepStrictEqual(k.body, { name: 'name', version: 'version' });
+    });
 });
