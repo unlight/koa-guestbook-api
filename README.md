@@ -4,9 +4,14 @@ SETUP
 ---
 1. Database connection string
 ```
-setx TYPEORM_DRIVER_TYPE "sqlite"
-setx TYPEORM_STORAGE "db.sqlite"
+setx TYPEORM_STORAGE "~db.sqlite"
 ```
+
+SCRIPTS
+---
+| Command               | Description        |
+|:----------------------|:-------------------|
+| `npm run script:sync` | synchronize schema |
 
 DEBUG
 ---
@@ -18,6 +23,7 @@ node --inspect-brk node_modules/ts-node/dist/_bin.js -F node_modules/mocha/bin/_
 TODO
 ---
 * create base strcuture (message id date inserted)
+* script for update strcuture
 * tags for message
 * authorize (json web token)
 * if user authorized track his message

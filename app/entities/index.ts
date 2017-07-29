@@ -1,2 +1,2 @@
+export { Category } from './category';
 export { Message } from './message';
-export { Sequence } from './sequence';

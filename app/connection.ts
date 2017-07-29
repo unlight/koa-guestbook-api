@@ -4,21 +4,17 @@ import * as Koa from 'koa';
 
 export function getConnection(options?): Promise<Connection> {
     return createConnection({
-        driver: {
-            type: process.env.TYPEORM_DRIVER_TYPE,
-            storage: process.env.TYPEORM_STORAGE
-        },
+        type: 'sqlite',
+        database: process.env.TYPEORM_STORAGE as string,
         entities: [
             `${__dirname}/entities/*.ts`
         ],
         autoSchemaSync: false,
-        logging: {
-            logQueries: options && options.logQueries
-        },
+        logging: options && options.logQueries,
         cli: {
             migrationsDir: `${__dirname}/migrations`
         },
-    } as ConnectionOptions);
+    });
 }
 
 export function connection(): Koa.Middleware {
