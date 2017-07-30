@@ -4,6 +4,7 @@ import { connection, createPersistentConnection } from './connection';
 import { errorHandler } from './error-handler';
 import { homeRoutes } from './home/home';
 import { categoryRoutes } from './category/category.api';
+import { messageRoutes } from './message/message.api';
 const bodyParser = require('koa-bodyparser');
 
 export const app = new Koa();
@@ -24,6 +25,7 @@ if (startServer) {
 }
 app.use(homeRoutes());
 app.use(categoryRoutes());
+app.use(messageRoutes());
 
 if (startServer) {
     const server = app.listen(3007, () => {
