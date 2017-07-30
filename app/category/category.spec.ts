@@ -6,7 +6,7 @@ import { connection, openConnection, closeConnection } from '../connection';
 import assert = require('assert');
 import supertest = require('supertest');
 
-describe.only('category:', () => {
+describe('category:', () => {
 
     let server: Server;
 

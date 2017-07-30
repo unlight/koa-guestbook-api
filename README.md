@@ -23,8 +23,8 @@ node --inspect-brk node_modules/ts-node/dist/_bin.js -F node_modules/mocha/bin/_
 
 TODO
 ---
-* create base strcuture (message id date inserted)
-* script for update strcuture
+* api write message
+* api edit message
 * tags for message
 * authorize (json web token)
 * if user authorized track his message
