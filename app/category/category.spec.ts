@@ -1,6 +1,6 @@
 import { app } from '../server';
 import { Server } from 'http';
-import { inject, injector } from '@epam/inject';
+import { inject, injector } from 'njct';
 import { browse } from './category.api';
 import { connection, openConnection, closeConnection } from '../connection';
 import assert = require('assert');

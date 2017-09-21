@@ -3,7 +3,7 @@ import * as assert from 'assert';
 import { Message } from './message';
 import { openConnection, closeConnection } from '../connection';
 import { getEntityManager, getRepository } from 'typeorm';
-import { create } from './message.api';
+import { create, update } from './message.api';
 import { app } from '../server';
 import { Server } from 'http';
 import supertest = require('supertest');
@@ -79,5 +79,19 @@ describe('message:', () => {
                 });
         });
 
+        it('update bogus id', async () => {
+            const k = {
+                params: {
+                    id: -1
+                },
+                request: {
+                    body: {
+                        id: 2
+                    }
+                }
+            } as any;
+            await update(k, () => { });
+            assert.equal(k.status, 404);
+        });
     });
 });

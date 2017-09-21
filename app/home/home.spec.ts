@@ -1,7 +1,7 @@
 import { app } from '../server';
 import { Server } from 'http';
 import { home } from './home';
-import { inject, injector } from '@epam/inject';
+import { inject, injector } from 'njct';
 import assert = require('assert');
 
 import supertest = require('supertest');

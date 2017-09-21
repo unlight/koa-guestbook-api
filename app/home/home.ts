@@ -1,6 +1,6 @@
 import * as Router from 'koa-router';
 import { resolve } from 'path';
-import { inject } from '@epam/inject';
+import { inject } from 'njct';
 
 export async function home(k: Router.IRouterContext, next: any) {
     const readJson = inject('readJson', () => require('jsonfile').readFileSync);

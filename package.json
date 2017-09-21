@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run server",
-    "server:inspect": "ts-node --inspect -F app/server",
     "server": "ts-node -F app/server",
+    "server:inspect": "ts-node --inspect -F app/server",
     "start:dev": "nodemon --no-colors -e ts,json --watch app --ignore *.spec.ts -x \"ts-node -F app/server\"",
     "start:dev:v": "npm run start:dev -- --verbose",
     "test": "npm run eslint && npm run tscheck && npm run t",
@@ -27,28 +27,28 @@
     "up": "updtr --test-stdout --save-exact -R simple --test \"npm run test\""
   },
   "dependencies": {
-    "@epam/inject": "1.0.1",
-    "jsonfile": "3.0.1",
+    "jsonfile": "4.0.0",
     "koa": "2.3.0",
     "koa-bodyparser": "4.2.0",
     "koa-response-time": "2.0.0",
     "koa-router": "7.2.1",
+    "njct": "1.0.0",
     "objectmodel": "3.1.0",
     "reflect-metadata": "0.1.10",
     "tslib": "1.7.1",
-    "typeorm": "0.1.0-alpha.33"
+    "typeorm": "0.1.0-alpha.45"
   },
   "devDependencies": {
     "@types/koa": "2.0.39",
-    "@types/koa-router": "7.0.22",
-    "@types/mocha": "2.2.41",
-    "@types/node": "8.0.17",
-    "@types/supertest": "2.0.2",
-    "eslint": "4.3.0",
+    "@types/koa-router": "7.0.23",
+    "@types/mocha": "2.2.43",
+    "@types/node": "8.0.29",
+    "@types/supertest": "2.0.3",
+    "eslint": "4.7.2",
     "eslint-import-resolver-node": "0.3.1",
     "eslint-plugin-import": "2.7.0",
     "eslint-plugin-mocha": "4.11.0",
-    "eslint-plugin-typescript": "0.3.0",
+    "eslint-plugin-typescript": "0.7.0",
     "eslint-plugin-unicorn": "2.1.2",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-eslint": "4.0.0",
@@ -56,13 +56,12 @@
     "gulp-ignore": "2.0.2",
     "gulp-load-plugins": "1.5.0",
     "gulp-memory-cache": "0.3.0",
-    "mocha": "3.4.2",
-    "nodemon": "1.11.0",
-    "rimraf": "2.6.1",
-    "sqlite3": "3.1.8",
+    "mocha": "3.5.3",
+    "nodemon": "1.12.1",
+    "sqlite3": "3.1.11",
     "supertest": "3.0.0",
     "ts-node": "3.3.0",
-    "typescript": "2.3.4",
-    "typescript-eslint-parser": "4.0.0"
+    "typescript": "2.5.2",
+    "typescript-eslint-parser": "8.0.0"
   }
 }

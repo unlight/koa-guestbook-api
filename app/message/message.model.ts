@@ -5,4 +5,5 @@ export const MessageModel = new ObjectModel({
     author: String,
     body: String,
     category: [Number],
+    dateUpdated: [String],
 });
